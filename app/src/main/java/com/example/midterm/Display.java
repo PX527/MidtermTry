@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,9 +24,9 @@ public class Display extends AppCompatActivity {
         lv=findViewById(R.id.lv);
 
         //Create games object
-        Games g1=new Games("Half-Life 2","9.9/10","$20");
-        Games g2=new Games("CS:GO","8/10","$15");
-        Games g3=new Games("Fallout 76","2/10","$3");
+        Games g1=new Games("Half-Life 2","9.9/10","$20","game 1 des");
+        Games g2=new Games("CS:GO","8/10","$15","game2 desc");
+        Games g3=new Games("Fallout 76","2/10","$3","game3 desc");
 
         ArrayList<Games> gamesList=new ArrayList<>();
 
@@ -36,18 +37,40 @@ public class Display extends AppCompatActivity {
         gamesListAdapter adapter=new gamesListAdapter(this,R.layout.adapter_view,gamesList,this);
         lv.setAdapter(adapter);
 
-        /*gamesListAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Games games = (Games) parent.getAdapter().getItem(position);
 
                 Intent i = new Intent(Display.this, gamesDetails.class);
-                i.putExtra("name", getName());
-                i.putExtra("id", student.getStudId());
-                i.putExtra("course", student.getStudCourse());
+                i.putExtra("name", games.getName());
+                i.putExtra("rating", games.getRating());
+                i.putExtra("price", games.getPrice());
+                i.putExtra("description", games.getDescription());
                 startActivity(i);
             }
-        });  */
+        });
+
+        /*private void setListen(){
+            gamesListAdapter.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+
+                    String inputUsername=edtUsername.getText().toString();
+                    String inputPassword=edtPassword.getText().toString();
+
+                    if(inputUsername.equals(uName) && inputPassword.equals(uPass)){
+
+                        Toast.makeText(MainActivity.this, "Login Sucessfully",Toast.LENGTH_SHORT).show();
+                        Intent i=new Intent(MainActivity.this,Display.class);
+                        startActivity(i);
+                        //finish();
+                    }else{
+                        Toast.makeText(MainActivity.this, "Login Failed",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }*/
     }
 
 

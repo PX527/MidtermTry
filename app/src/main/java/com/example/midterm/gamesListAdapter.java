@@ -29,8 +29,9 @@ public class gamesListAdapter extends ArrayAdapter<Games> {
         String name=getItem(position).getName();
         String rating=getItem(position).getRating();
         String price=getItem(position).getPrice();
+        String description=getItem(position).getDescription();
 
-        Games games=new Games(name,rating,price);
+        Games games=new Games(name,rating,price,description);
 
         LayoutInflater inflater=LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource,parent,false);
@@ -38,6 +39,7 @@ public class gamesListAdapter extends ArrayAdapter<Games> {
         TextView tvName=convertView.findViewById(R.id.tvName);
         TextView tvRating=convertView.findViewById(R.id.tvRate);
         TextView tvPrice=convertView.findViewById(R.id.tvPrice);
+
 
         tvName.setText(name);
         tvRating.setText(rating);
