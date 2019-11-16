@@ -17,9 +17,9 @@ public class gamesListAdapter extends ArrayAdapter<Games> {
     private Context mContext;
     int mResource;
 
-    public gamesListAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Games> objects, Context mContext) {
+    public gamesListAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Games> objects) {
         super(context, resource, objects);
-        this.mContext = mContext;
+        this.mContext = context;
         mResource=resource;
     }
 

@@ -4,23 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".gamesDetails"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".gamesDetails">
 
     <TextView
-        android:id="@+id/tvGamesDetails1"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:textSize="20sp"
-        android:gravity="center"/>
-
-    <TextView
-        android:id="@+id/tvGamesDetails2"
+        android:id="@+id/tvGamesDetailsName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        />
+        android:text="Title"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_margin="60dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating : "
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:id="@+id/tvGamesDetailsRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rate"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price : "
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:id="@+id/tvGamesDetailsPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="price"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description : "
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:id="@+id/tvGamesDetailsDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="description"
+            android:textSize="20sp"
+            android:layout_marginLeft="25dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>
+
+
+
